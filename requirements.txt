@@ -7,3 +7,6 @@ torch
 sentencepiece
 tokenizers==0.12.1
 wandb
+deepspeed
+accelerate
+datasets
