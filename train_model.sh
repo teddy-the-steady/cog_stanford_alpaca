@@ -3,8 +3,7 @@
 torchrun --nproc_per_node=4 --master_port=9292 cog_stanford_alpaca/train.py \
     --model_name_or_path EleutherAI/polyglot-ko-12.8b \
     --data_path /workspace/KoAlpaca/ko_alpaca_data.json \
-    # --bf16 True \
-    --fp16 True \
+    --bf16 True \
     --output_dir /workspace/output \
     --num_train_epochs 3 \
     --per_device_train_batch_size 4 \
@@ -18,4 +17,4 @@ torchrun --nproc_per_node=4 --master_port=9292 cog_stanford_alpaca/train.py \
     --weight_decay 0. \
     --warmup_ratio 0.03 \
     --deepspeed "./cog_stanford_alpaca/configs/zero2.json" \
-    # --tf32 True
+    --tf32 True
