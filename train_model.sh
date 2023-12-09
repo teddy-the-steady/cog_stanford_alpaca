@@ -16,5 +16,5 @@ torchrun --nproc_per_node=4 --master_port=9292 cog_stanford_alpaca/train.py \
     --learning_rate 2e-5 \
     --weight_decay 0. \
     --warmup_ratio 0.03 \
-    --deepspeed "./cog_stanford_alpaca/configs/zero2.json" \
+    --deepspeed "./cog_stanford_alpaca/configs/default_offload_opt_param.json" \
     --tf32 True
