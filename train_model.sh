@@ -1,6 +1,6 @@
 #!/bin/bash
 
-torchrun --nproc_per_node=4 --master_port=9292 cog_stanford_alpaca/train.py \
+torchrun --nproc_per_node=8 --master_port=9292 cog_stanford_alpaca/train.py \
     --model_name_or_path EleutherAI/polyglot-ko-12.8b \
     --data_path /workspace/KoAlpaca/ko_alpaca_data.json \
     --fp16 True \
