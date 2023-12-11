@@ -240,10 +240,10 @@ def train():
     trainer = Trainer(model=model, tokenizer=tokenizer, args=training_args, **data_module)
     trainer.train()
     # trainer.save_state()
-    checkpoint_dir = os.path.join(training_args.output_dir, "checkpoint-final")
-    trainer.deepspeed.save_checkpoint(checkpoint_dir)
-    safe_save_model_for_hf_trainer(trainer=trainer, output_dir=training_args.output_dir)
-    model.push_to_hub('teddy-jeon/alpaca-translated-polyglot-ko-12.8b')
+    # checkpoint_dir = os.path.join(training_args.output_dir, "checkpoint-final")
+    # trainer.deepspeed.save_checkpoint(checkpoint_dir)
+    # safe_save_model_for_hf_trainer(trainer=trainer, output_dir=training_args.output_dir)
+    model.push_to_hub('teddy-jeon/alpaca-translated-ft-polyglot-ko-12.8b')
 
 
 if __name__ == "__main__":
