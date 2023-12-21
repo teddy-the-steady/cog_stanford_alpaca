@@ -1,6 +1,6 @@
 #!/bin/bash
 
-torchrun --nproc_per_node=4 --master_port=9292 cog_stanford_alpaca/train.py \
+torchrun --nproc_per_node=8 --master_port=9292 cog_stanford_alpaca/train.py \
     --model_name_or_path EleutherAI/polyglot-ko-12.8b \
     --data_path /root/work/KoAlpaca/ko_alpaca_data.json \
     --fp16 True \
@@ -11,10 +11,10 @@ torchrun --nproc_per_node=4 --master_port=9292 cog_stanford_alpaca/train.py \
     --gradient_accumulation_steps 8 \
     --evaluation_strategy "no" \
     --save_strategy "steps" \
-    --save_steps 3 \
+    --save_steps 2000 \
     --save_total_limit 1 \
     --learning_rate 2e-5 \
     --weight_decay 0. \
     --warmup_ratio 0.03 \
     --deepspeed "./cog_stanford_alpaca/configs/default_offload_opt_param.json" \
-    # --gradient_checkpointing 1
+    --gradient_checkpointing 1
